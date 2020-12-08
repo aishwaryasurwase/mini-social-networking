@@ -1,0 +1,22 @@
+mat-expansion-panel{
+    margin-top: 1rem;
+}
+.info-text {
+    text-align: center;
+}
+#spinner{
+    margin: auto;
+    width: 100%;
+}
+.post-image{
+    width: 100%;
+    height: 50%;
+}
+.post-image img{
+    width: 100%;
+    height: 50%;
+}
+
+mat-paginator {
+    margin-top: 1rem;
+}
