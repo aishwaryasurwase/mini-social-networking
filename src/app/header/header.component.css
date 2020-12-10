@@ -11,3 +11,7 @@ a{
 ul{
     display: flex;
 }
+
+mat-toolbar{
+    width: 100%;
+}

@@ -6,7 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 import { environment } from '../../environments/environment';
-// http://localhost:3100/api/
+
 const BACKEND_URL = environment.apiUrl;
 @Injectable({
   providedIn: 'root'
@@ -37,9 +37,8 @@ export class PostsService {
 
   createPost(title: string, content: string, image: File) {
     this.isLoadingSubj.next(true);
-    // console.log("On create service ", post);
-
     const postData = new FormData();
+
     postData.append('_id', '');
     postData.append('title', title);
     postData.append('content', content);
@@ -87,17 +86,9 @@ export class PostsService {
 
     // this.http.put(`http://localhost:3100/api/editPost/${id}`, postData, { headers: httpHeaders }).subscribe(res => {
     this.http.put(BACKEND_URL + `editPost/${id}`, postData).subscribe((res: any) => {
-      // console.log("Updated ", res);
-      // alert("Update Successfully");
-      // if (res.post) {
       this.snackbar.open("Post updated successfully", null, {
         duration: 3000
       })
-      // } else {
-      //   this.snackbar.open(res.data, null, {
-      //     duration: 3000
-      //   })
-      // }
       this.isLoadingSubj.next(false);
       this.router.navigate(['/'])
     }, (err) => {

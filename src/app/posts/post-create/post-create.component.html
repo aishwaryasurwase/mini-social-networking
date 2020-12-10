@@ -24,7 +24,7 @@
         <div *ngIf="imagePreview" class="imagePreview">
             <img [src]="imagePreview" [alt]="postForm.value.title">
         </div>
-        <mat-form-field>
+        <mat-form-field style="margin-top: 1rem;">
             <textarea name="content" rows="10" matInput required formControlName="content" [(ngModel)]="post.content"
                 placeholder="Post Content"></textarea>
             <mat-error *ngIf="!postForm.hasError('required')">Please enter a content</mat-error>
